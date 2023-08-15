@@ -15,8 +15,9 @@ h1 {
   color: #fff;
   padding: 20px 15px;
   border-radius: 10px;
-  text-align: center;
   opacity: 0.9;
+  text-align: center;
+  margin-top: 31%;
 }
 
 a {
@@ -62,19 +63,12 @@ nav {
 .nav-center {
   height: 100%;
   position: relative;
-  max-width: 580px;
-  margin: 0 auto;
 }
 
+.nav-center,
 main {
-  position: relative;
-  height: 500px;
-}
-
-.main-container {
-  position: absolute;
-  top: 33%;
-  left: 30%;
+  max-width: 580px;
+  margin: 0px auto;
 }
 
 #color {
