@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   padding: 20px 15px;
   border-radius: 10px;
@@ -69,10 +69,6 @@ nav {
 main {
   max-width: 580px;
   margin: 0px auto;
-}
-
-#color {
-  color: #ca8a4b;
 }
 
 #change-color-btn {

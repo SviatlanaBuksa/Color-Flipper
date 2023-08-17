@@ -7,10 +7,10 @@ let colorValue = document.querySelector("#color");
 changeColorBtn.addEventListener("click", changeBgColor);
 
 function changeBgColor() {
-  document.body.style.backgroundColor = `${getRandomColor(maxNumber)}`;
+  document.body.style.backgroundColor = `${getRandomHex()}`;
 }
 
-function getRandomColor(max) {
+/*function getRandomColor(max) {
   let randomNumber = Math.floor(Math.random() * max);
   let color = colors[randomNumber];
 
@@ -21,4 +21,14 @@ function getRandomColor(max) {
 
 function changeColorValue(color) {
   colorValue.innerHTML = `${color}`;
+}  */
+
+function getRandomHex() {
+  let letters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+  let hexColor = "#";
+
+  for (let i = 0; i < 6; i++) {
+    hexColor += letters[Math.floor(Math.random() * 16)];
+  }
+  return hexColor;
 }
