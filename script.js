@@ -10,40 +10,19 @@ hexLink.addEventListener("click", selectHexVersion);
 simpleLink.addEventListener("click", selectSimpleVersion);
 changeColorBtn.addEventListener("click", changeBgColor);
 
-function changeBgColor() {
-  if (hexLink.className == "active") {
-    document.body.style.backgroundColor = `${getRandomHex()}`;
-  } else {
-    document.body.style.backgroundColor = `${getRandomColor()}`;
-  }
-}
-
 function selectHexVersion() {
   hexLink.classList.add("active");
   simpleLink.classList.remove("active");
 }
-
 function selectSimpleVersion() {
   hexLink.classList.remove("active");
   simpleLink.classList.add("active");
 }
 
-function getRandomColor() {
-  let randomNumber = getRandomNumber(colors.length);
-  let color = colors[randomNumber];
-
-  changeColorValue(color);
-
-  return color;
-}
-
-function changeColorValue(color) {
-  colorValue.innerHTML = `${color}`;
-}
-
-function getRandomNumber(max) {
-  let randomNumber = Math.floor(Math.random() * max);
-  return randomNumber;
+function changeBgColor() {
+  hexLink.className == "active"
+    ? (document.body.style.backgroundColor = `${getRandomHex()}`)
+    : (document.body.style.backgroundColor = `${getRandomColor()}`);
 }
 
 function getRandomHex() {
@@ -60,4 +39,22 @@ function getRandomHex() {
   changeColorValue(hexColor);
 
   return hexColor;
+}
+
+function getRandomColor() {
+  let randomNumber = getRandomNumber(colors.length);
+  let color = colors[randomNumber];
+
+  changeColorValue(color);
+
+  return color;
+}
+
+function getRandomNumber(max) {
+  let randomNumber = Math.floor(Math.random() * max);
+  return randomNumber;
+}
+
+function changeColorValue(color) {
+  colorValue.innerHTML = `${color}`;
 }
