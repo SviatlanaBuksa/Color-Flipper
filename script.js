@@ -1,3 +1,4 @@
+let defaultBgColor = "#fff";
 let colors = ["black", "green", "yellow", "#CA8A4B", "rgba(133,122,200)"];
 
 let changeColorBtn = document.querySelector("#change-color-btn");
@@ -6,6 +7,8 @@ let colorValue = document.querySelector("#color");
 let simpleLink = document.querySelector("#simple");
 let hexLink = document.querySelector("#hex");
 
+window.onload = setDefaultColor(defaultBgColor);
+
 hexLink.addEventListener("click", selectHexVersion);
 simpleLink.addEventListener("click", selectSimpleVersion);
 changeColorBtn.addEventListener("click", changeBgColor);
@@ -13,6 +16,7 @@ changeColorBtn.addEventListener("click", changeBgColor);
 function selectHexVersion() {
   hexLink.classList.add("active");
   simpleLink.classList.remove("active");
+  setDefaultColor(defaultBgColor);
 }
 function selectSimpleVersion() {
   hexLink.classList.remove("active");
@@ -57,4 +61,9 @@ function getRandomNumber(max) {
 
 function changeColorValue(color) {
   colorValue.innerHTML = `${color}`;
+}
+
+function setDefaultColor(color) {
+  document.body.style.backgroundColor = `${color}`;
+  changeColorValue(color);
 }
